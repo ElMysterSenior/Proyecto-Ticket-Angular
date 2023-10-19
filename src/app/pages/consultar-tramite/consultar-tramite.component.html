@@ -1,0 +1,53 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        <div class="form-group">
+            <label for="curp">CURP:</label>
+            <input type="text" id="curp" formControlName="curp" class="form-control">
+            <!-- Corrección: Cambiando 'nombreCompleto' por 'curp' -->
+            <div *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</div>
+            <div *ngIf="formulario.get('curp')?.hasError('required') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="mensaje-error">
+                Este campo es obligatorio.
+            </div>
+            <!-- Corrección: Cambiando 'validarCURP' por 'curpInvalido' y 'nombreCompleto' por 'curp' -->
+            <div *ngIf="formulario.get('curp')?.hasError('curpInvalido') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="mensaje-error">
+                Por favor, inserta un CURP válido. La estructura debe ser como: RXBO001018HCLJDSA3
+            </div>
+        </div>
+        <button *ngIf="tramiteData" (click)="generatePDF()" class="btn btn-secondary">Generar PDF</button>
+        <button type="submit" class="btn btn-primary">Consultar Trámite</button>
+    </form>
+
+<table *ngIf="tramiteData" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID Trámite</th>
+        <th>Intermediario</th>
+        <th>Nombre</th>
+        <th>CURP</th>
+        <th>Telefono</th>
+        <th>Celular</th>
+        <th>Email</th>
+        <th>Nivel Educativo</th>
+        <th>Municipio</th>
+        <th>Tema</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ tramiteData.tramite_id }}</td>
+        <td>{{ tramiteData.intermediario_nombre }}</td>
+        <td>{{ tramiteData.nombre }} {{ tramiteData.paterno }} {{ tramiteData.materno }}</td>
+        <td>{{ tramiteData.curp }}</td>
+        <td>{{ tramiteData.telefono }}</td>
+        <td>{{ tramiteData.celular }}</td>
+        <td>{{ tramiteData.correo }}</td>
+        <td>{{ tramiteData.nivel_descripcion }}</td>
+        <td>{{ tramiteData.municipio_nombre }}</td>
+        <td>{{ tramiteData.tema_descripcion }}</td>
+        <td>{{ tramiteData.tramite_status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

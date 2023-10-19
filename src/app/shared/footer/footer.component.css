@@ -1,0 +1,20 @@
+/* Estilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilos para el footer */
+  .app-footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  

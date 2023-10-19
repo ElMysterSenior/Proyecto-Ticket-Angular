@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ticket de tramite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li *ngIf="userLoginOn" class="nav-item">
+            <a class="nav-link" href="/new-tramite">Tramitar turno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consultar-tramite">Consultar turno</a>
+          </li>
+          <li *ngIf="userLoginOn" class="nav-item">
+            <a class="nav-link" href="#">Modificar turno</a>
+          </li>
+          <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">
+            <a class="nav-link" href="#">Borrar turno</a>
+          </li>
+          <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">
+            <a class="nav-link" href="#">Datos</a>
+          </li>
+          <li *ngIf="!userLoginOn" class="nav-item">
+            <a class="nav-link" routerLink="/login">Iniciar sesión</a>
+          </li>
+          <li *ngIf="userLoginOn" class="nav-item">
+            <a class="nav-link" routerLink="/login">Cerrar sesión</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>

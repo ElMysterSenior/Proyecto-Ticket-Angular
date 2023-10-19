@@ -1,0 +1,38 @@
+/* Estilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilos para el header */
+  .app-header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
+  }
+  
+  .app-nav {
+    display: inline-block;
+  }
+  
+  .app-nav a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .app-nav a:hover {
+    color: #ddd;
+  }
+  
