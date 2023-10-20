@@ -12,7 +12,8 @@ import{ReactiveFormsModule} from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
 import { NewTramiteComponent } from './pages/new-tramite/new-tramite.component';
 import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-tramite.component';
-import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-tramite.component'
+import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-tramite.component';
+import { BorrarTramiteComponent } from './pages/borrar-tramite/borrar-tramite.component'
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-t
     NavComponent,
     NewTramiteComponent,
     ConsultarTramiteComponent,
-    ModificarTramiteComponent
+    ModificarTramiteComponent,
+    BorrarTramiteComponent
 
    
 

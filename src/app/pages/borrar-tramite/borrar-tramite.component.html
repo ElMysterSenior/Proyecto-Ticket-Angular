@@ -1,0 +1,14 @@
+<!-- borrar-tramite.component.html -->
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        <div class="form-group">
+            <label for="curp">CURP:</label>
+            <input type="text" id="curp" formControlName="curp" class="form-control">
+            <div *ngIf="mensaje" class="mensaje">{{ mensaje }}</div>
+            <div *ngIf="formulario.get('curp')?.hasError('required') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="mensaje-error">
+                Este campo es obligatorio.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger">Borrar Trámite</button>
+    </form>
+</div>

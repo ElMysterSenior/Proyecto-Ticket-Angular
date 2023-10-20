@@ -20,4 +20,7 @@ export class TramiteService {
     return this.http.put<any>(`${this.apiURL}/actualizar-por-curp/${datosTramite.curp}`, datosTramite);
   }
   
+  borrarTramite(curp: string): Observable<void> {
+    return this.http.delete<any>(`${this.apiURL}/eliminar-tramite/${curp}`);
+  }
 }

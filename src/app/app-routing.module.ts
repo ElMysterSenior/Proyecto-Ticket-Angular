@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth/auth.guard';
 import { NewTramiteComponent } from './pages/new-tramite/new-tramite.component';
 import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-tramite.component';
 import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-tramite.component';
+import { BorrarTramiteComponent } from './pages/borrar-tramite/borrar-tramite.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'new-tramite', component: NewTramiteComponent,canActivate: [AuthGuard] },
   {path: 'modificar-tramite', component: ModificarTramiteComponent,canActivate: [AuthGuard] },  // Añadir esta línea
   {path: 'consultar-tramite', component: ConsultarTramiteComponent,canActivate: [AuthGuard] },  // Añadir esta línea
+  {path: 'eliminar-tramite', component: BorrarTramiteComponent,canActivate: [AuthGuard] },  // Añadir esta línea
 ];
 
 @NgModule({
