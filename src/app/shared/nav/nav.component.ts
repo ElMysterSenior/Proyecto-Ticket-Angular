@@ -35,4 +35,28 @@ export class NavComponent implements OnInit, OnDestroy {
       })
     );
   }
+  
+  onMouseEnter(event: Event): void {
+    const target = event.target as HTMLElement;
+    const parent = target.closest('.nav-item');
+    if (parent) {
+      parent.classList.add('show');
+      const menu = parent.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.classList.add('show');
+      }
+    }
+  }
+
+  onMouseLeave(event: Event): void {
+    const target = event.target as HTMLElement;
+    const parent = target.closest('.nav-item');
+    if (parent) {
+      parent.classList.remove('show');
+      const menu = parent.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.classList.remove('show');
+      }
+    }
+  }
 }

@@ -21,9 +21,22 @@
           <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">
             <a class="nav-link" href="/eliminar-tramite">Borrar turno</a>
           </li>
-          
-          <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">
-            <a class="nav-link" href="#">Datos</a>
+
+          <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item dropdown"  (mouseenter)="onMouseEnter($event)" 
+          (mouseleave)="onMouseLeave($event)">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Datos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/data-analytics">Tramites por Estado</a>
+              <a class="dropdown-item" href="/data-analytics2">Tramites por tema</a>
+              <a class="dropdown-item" href="/data-analytics3">Tramites por nivel educativo</a>
+              <a class="dropdown-item" href="/data-analytics4">Tramites por municipio</a>
+              <a class="dropdown-item" href="/data-analytics5">Cantidad de personas por nivel educativo</a>
+            
+            
+            
+            </div>
           </li>
           <li *ngIf="!userLoginOn" class="nav-item">
             <a class="nav-link" routerLink="/login">Iniciar sesión</a>

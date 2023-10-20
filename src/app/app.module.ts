@@ -13,7 +13,12 @@ import{HttpClientModule} from '@angular/common/http';
 import { NewTramiteComponent } from './pages/new-tramite/new-tramite.component';
 import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-tramite.component';
 import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-tramite.component';
-import { BorrarTramiteComponent } from './pages/borrar-tramite/borrar-tramite.component'
+import { BorrarTramiteComponent } from './pages/borrar-tramite/borrar-tramite.component';
+import { DataAnalyticsComponent } from './pages/data-analytics/data-analytics.component';
+import { DataAnalytics2Component } from './pages/data-analytics2/data-analytics2.component';
+import { DataAnalytics3Component } from './pages/data-analytics3/data-analytics3.component';
+import { DataAnalytics4Component } from './pages/data-analytics4/data-analytics4.component';
+import { DataAnalytics5Component } from './pages/data-analytics5/data-analytics5.component'
 
 
 @NgModule({
@@ -27,7 +32,13 @@ import { BorrarTramiteComponent } from './pages/borrar-tramite/borrar-tramite.co
     NewTramiteComponent,
     ConsultarTramiteComponent,
     ModificarTramiteComponent,
-    BorrarTramiteComponent
+    BorrarTramiteComponent,
+    DataAnalyticsComponent,
+    DataAnalytics2Component,
+    DataAnalytics3Component,
+    DataAnalytics4Component,
+    DataAnalytics5Component
+  
 
    
 
