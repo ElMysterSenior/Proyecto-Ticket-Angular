@@ -11,7 +11,8 @@ import { NavComponent } from './shared/nav/nav.component';
 import{ReactiveFormsModule} from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
 import { NewTramiteComponent } from './pages/new-tramite/new-tramite.component';
-import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-tramite.component'
+import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-tramite.component';
+import { ModificarTramiteComponent } from './pages/modificar-tramite/modificar-tramite.component'
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ConsultarTramiteComponent } from './pages/consultar-tramite/consultar-t
     DashboardComponent,
     NavComponent,
     NewTramiteComponent,
-    ConsultarTramiteComponent
+    ConsultarTramiteComponent,
+    ModificarTramiteComponent
 
    
 

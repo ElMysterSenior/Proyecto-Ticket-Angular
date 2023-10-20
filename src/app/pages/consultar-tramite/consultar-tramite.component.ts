@@ -76,16 +76,16 @@ export class ConsultarTramiteComponent implements OnInit {
     const tramite = this.tramiteData;
     const data = [[
       tramite.tramite_id,
-      tramite.intermediario_nombre,
+      tramite.nombreCompleto,
       `${tramite.nombre} ${tramite.paterno} ${tramite.materno}`,
       tramite.curp,
       tramite.telefono,
       tramite.celular,
       tramite.correo,
-      tramite.nivel_descripcion,
-      tramite.municipio_nombre,
-      tramite.tema_descripcion,
-      tramite.tramite_status  // Asegúrate de que esta es la propiedad correcta para el estatus
+      tramite.nivelEducativo,
+      tramite.municipio,
+      tramite.tema,
+      tramite.status  // Asegúrate de que esta es la propiedad correcta para el estatus
     ]];
 
     const fechaActual = new Date();

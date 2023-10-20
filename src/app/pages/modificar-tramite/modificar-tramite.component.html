@@ -1,0 +1,78 @@
+<div class="header">
+    <h1>Formulario para Modificar Trámite</h1>
+</div>
+
+<div class="container">
+    <form [formGroup]="formulario" >
+
+        <!-- Campo para ingresar CURP y botón para buscar datos -->
+        <div class="form-group">
+            <label for="buscarCurp">Ingresar CURP para buscar:</label>
+            <input type="text" id="buscarCurp" formControlName="curp" class="form-control">
+            <button (click)="buscarDatosPorCurp()" class="btn btn-info mt-2">Buscar</button>
+        </div>
+
+        <!-- Campos detallados del ticket de trámite -->
+        <div class="form-group">
+            <label for="nombreCompleto">Nombre completo:</label>
+            <input type="text" id="nombreCompleto" formControlName="nombreCompleto" class="form-control">
+        </div>
+        <button (click)="modificarIntermediario()" class="btn btn-info mt-2" [disabled]="estadoModificacion !== 'intermediario'">Modificar Intermediario</button>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" formControlName="nombre" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoPaterno">Apellido paterno:</label>
+            <input type="text" id="apellidoPaterno" formControlName="apellidoPaterno" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoMaterno">Apellido materno:</label>
+            <input type="text" id="apellidoMaterno" formControlName="apellidoMaterno" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" formControlName="telefono" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" formControlName="celular" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="correo" formControlName="email" class="form-control">
+        </div>
+
+        <button (click)="modificarPersona()" class="btn btn-info mt-2" [disabled]="estadoModificacion !== 'intermediario'">Modificar Persona </button>
+        <div class="form-group">
+            <label for="nivel">Nivel al que el alumno desea ingresar o que ya cursa:</label>
+            <input type="text" id="nivel" formControlName="nivel" class="form-control" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="municipio">Municipio:</label>
+            <input type="text" id="municipio" formControlName="municipio" class="form-control" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="tema">Seleccione tema a tratar:</label>
+            <input type="text" id="tema" formControlName="tema" class="form-control" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="status">Estado del trámite:</label>
+            <select id="status" formControlName="status" class="form-control">
+                <option value="Pendiente">Pendiente</option>
+                <option value="Completado">Completado</option>
+            </select>
+        </div>
+        <button (click)="modificarStatus()" class="btn btn-info mt-2" [disabled]="estadoModificacion !== 'intermediario'">Modificar Status</button>
+
+
+    </form>
+</div>

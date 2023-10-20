@@ -15,4 +15,9 @@ export class TramiteService {
   consultarTramite(curp: string): Observable<any> {
     return this.http.get<any>(`${this.apiURL}/consultar-tramite/${curp}`);
   }
+
+  modificarTramite(datosTramite: any): Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/actualizar-por-curp/${datosTramite.curp}`, datosTramite);
+  }
+  
 }

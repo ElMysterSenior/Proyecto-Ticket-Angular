@@ -46,6 +46,7 @@ private handleError(error: HttpErrorResponse) {
 }
 
 
+
 get userData(): Observable<User> {
   return this.currentUserData.asObservable();
 }
