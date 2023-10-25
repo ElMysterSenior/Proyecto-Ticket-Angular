@@ -15,7 +15,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/consultar-tramite">Consultar turno</a>
           </li>
-          <li *ngIf="userLoginOn" class="nav-item">
+          <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">
             <a class="nav-link" href="/modificar-tramite">Modificar turno</a>
           </li>
           <li *ngIf="userLoginOn && userRole === 'admin'" class="nav-item">

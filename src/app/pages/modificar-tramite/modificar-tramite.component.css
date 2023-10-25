@@ -1,0 +1,7 @@
+.container-fluid {
+    min-height: 100vh; /* Esto hará que el contenedor principal tenga al menos la altura de la ventana del navegador */
+    padding-bottom: 2rem; /* Esto añade algo de espacio en la parte inferior, lo que puede ayudar a evitar la superposición */
+  }
+  .container {
+    margin-bottom: 4rem; /* Esto añade un margen en la parte inferior del contenedor */
+  }

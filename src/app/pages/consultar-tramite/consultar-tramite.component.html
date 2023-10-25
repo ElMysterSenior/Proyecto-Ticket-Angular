@@ -1,53 +1,54 @@
-<div class="container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
-        <div class="form-group">
-            <label for="curp">CURP:</label>
-            <input type="text" id="curp" formControlName="curp" class="form-control">
-            <!-- Corrección: Cambiando 'nombreCompleto' por 'curp' -->
-            <div *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</div>
-            <div *ngIf="formulario.get('curp')?.hasError('required') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="mensaje-error">
-                Este campo es obligatorio.
-            </div>
-            <!-- Corrección: Cambiando 'validarCURP' por 'curpInvalido' y 'nombreCompleto' por 'curp' -->
-            <div *ngIf="formulario.get('curp')?.hasError('curpInvalido') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="mensaje-error">
-                Por favor, inserta un CURP válido. La estructura debe ser como: RXBO001018HCLJDSA3
-            </div>
-        </div>
-        <button *ngIf="tramiteData" (click)="generatePDF()" class="btn btn-secondary">Generar PDF</button>
-        <button type="submit" class="btn btn-primary">Consultar Trámite</button>
-    </form>
+<div class="container mt-4">
+  <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+      <div class="form-group">
+          <label for="curp">CURP:</label>
+          <input type="text" id="curp" formControlName="curp" class="form-control">
+          <div *ngIf="mensaje" class="text-danger">{{ mensaje }}</div>
+          <div *ngIf="formulario.get('curp')?.hasError('required') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="text-danger">
+              Este campo es obligatorio.
+          </div>
+          <div *ngIf="formulario.get('curp')?.hasError('curpInvalido') && (formulario.get('curp')?.dirty || formulario.get('curp')?.touched)" class="text-danger">
+              Por favor, inserta un CURP válido. La estructura debe ser como: RXBO001018HCLJDSA3
+          </div>
+      </div>
+      <div class="d-flex justify-content-between mt-2">
+          <button *ngIf="tramiteData" (click)="generatePDF()" class="btn btn-secondary">Generar PDF</button>
+          <button type="submit" class="btn btn-primary">Consultar Trámite</button>
+      </div>
+  </form>
 
-<table *ngIf="tramiteData" class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID Trámite</th>
-        <th>Intermediario</th>
-        <th>Nombre</th>
-        <th>CURP</th>
-        <th>Telefono</th>
-        <th>Celular</th>
-        <th>Email</th>
-        <th>Nivel Educativo</th>
-        <th>Municipio</th>
-        <th>Tema</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ tramiteData.tramite_id }}</td>
-        <td>{{ tramiteData.nombreCompleto }}</td>
-        <td>{{ tramiteData.nombre }} {{ tramiteData.paterno }} {{ tramiteData.materno }}</td>
-        <td>{{ tramiteData.curp }}</td>
-        <td>{{ tramiteData.telefono }}</td>
-        <td>{{ tramiteData.celular }}</td>
-        <td>{{ tramiteData.correo }}</td>
-        <td>{{ tramiteData.nivelEducativo }}</td>
-        <td>{{ tramiteData.municipio }}</td>
-        <td>{{ tramiteData.tema }}</td>
-        <td>{{ tramiteData.status }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <div class="table-responsive mt-2">
+    <table *ngIf="tramiteData" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID Trámite</th>
+                <th>Intermediario</th>
+                <th>Nombre</th>
+                <th>CURP</th>
+                <th>Telefono</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Nivel Educativo</th>
+                <th>Municipio</th>
+                <th>Tema</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ tramiteData.tramite_id }}</td>
+                <td>{{ tramiteData.nombreCompleto }}</td>
+                <td>{{ tramiteData.nombre }} {{ tramiteData.paterno }} {{ tramiteData.materno }}</td>
+                <td>{{ tramiteData.curp }}</td>
+                <td>{{ tramiteData.telefono }}</td>
+                <td>{{ tramiteData.celular }}</td>
+                <td>{{ tramiteData.correo }}</td>
+                <td>{{ tramiteData.nivelEducativo }}</td>
+                <td>{{ tramiteData.municipio }}</td>
+                <td>{{ tramiteData.tema }}</td>
+                <td>{{ tramiteData.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </div>

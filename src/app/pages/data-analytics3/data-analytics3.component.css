@@ -1,0 +1,17 @@
+/* data-analytics.component.css */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: calc(100% - 40px); /* Resta los márgenes de los lados */
+    height: calc(100vh - 80px); /* Resta los márgenes superior e inferior */
+  }
+  
+  canvas {
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+  }
+  
